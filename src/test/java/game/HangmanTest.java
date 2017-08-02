@@ -8,15 +8,24 @@ import static org.junit.Assert.*;
 public class HangmanTest {
     @Test
     public void newLetter_instatiatesCorrectly(){
-        Hangman testHangman = new Hangman("a");
+        Hangman testHangman = new Hangman();
         assertEquals(true, testHangman instanceof Hangman);
     }
+
     @Test
-    public void newLetter_multipleLetters(){
-        Hangman testHangman = new Hangman("ab");
-        assertEquals("ab", testHangman.getLetter());
+    public void newLetter_findSingleLetterLocation(){
+        Hangman testHangman = new Hangman();
+        assertEquals("cat", testHangman.word_Generator());
+    }
+    @Test
+    public void newLetter_findLocation(){
+        Hangman testHangman = new Hangman();
+        assertArrayEquals(1>, testHangman.findLetter("a"));
     }
 
-
-
+    @Test
+    public void check_blanks() throws Exception {
+        Hangman testHangman = new Hangman();
+        assertEquals("___", testHangman.displayUserString());
+    }
 }
